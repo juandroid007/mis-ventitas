@@ -22,9 +22,9 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    background-image: linear-gradient(0deg, #EC008C, #FABFE2);
 
     @apply font-satisfy;
-    @apply bg-pinky;
   }
 
   .title {

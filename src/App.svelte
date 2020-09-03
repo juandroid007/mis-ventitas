@@ -8,8 +8,6 @@
 
   import { Router } from '@roxi/routify/runtime'
   import { routes } from '../.routify/routes'
-
-  $: console.log($user)
 </script>
 
 {#if $user !== undefined}
