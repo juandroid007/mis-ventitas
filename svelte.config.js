@@ -1,6 +1,6 @@
 const { mdsvex } = require('mdsvex');
-const { typescript } = require('svelte-preprocess');
+const { typescript, postcss } = require('svelte-preprocess');
 module.exports = {
   extensions: ['.svelte', '.svx'],
-  preprocess: [typescript(), mdsvex()],
+  preprocess: [typescript(), postcss(), mdsvex()],
 };
