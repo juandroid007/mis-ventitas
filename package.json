@@ -8,7 +8,7 @@
     "dev:svite": "svite -ts",
     "build": "run-s build:routify build:svite",
     "build:routify": "routify run -b",
-    "build:svite": "svite build -ts"
+    "build:svite": "NODE_ENV=production svite build -ts"
   },
   "dependencies": {
     "@roxi/routify": "^2.0.2",
