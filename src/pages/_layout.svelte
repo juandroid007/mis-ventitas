@@ -9,7 +9,7 @@
   <div class="flex-grow">
     <Navbar bind:sidebar={sidebarOpen} bind:height={padding}/>
 
-    <div style="margin-top: {padding}px">
+    <div class="container py-12" style="margin-top: {padding}px">
       <slot/>
     </div>
   </div>

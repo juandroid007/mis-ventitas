@@ -2,8 +2,8 @@
   import { login } from '../lib/auth'
 </script>
 
-<div class="flex flex-col w-full h-screen overflow-hidden bg-pinky font-satisfy">
-  <h1 class="p-12 mx-auto text-5xl text-center text-white lg:text-6xl font-satisfy">Mis Ventitas</h1>
+<div class="main">
+  <h1 class="title">Mis Ventitas</h1>
 
   <div class="flex w-full h-full">
     <button
@@ -14,3 +14,32 @@
     </button>
   </div>
 </div>
+
+<style>
+  .main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    @apply font-satisfy;
+    @apply bg-pinky;
+  }
+
+  .title {
+    color: white;
+    text-align: center;
+
+    @apply mx-auto;
+    @apply p-12;
+    @apply text-5xl;
+    @apply font-satisfy;
+  }
+
+  @screen lg {
+    .title {
+      @apply text-6xl;
+    }
+  }
+</style>

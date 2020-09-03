@@ -19,7 +19,7 @@
     <Login/>
   {/if}
 {:else}
-  <div class="flex w-full h-screen bg-pinky">
+  <div class="flex w-full h-screen">
     <div class="loading">
       <div class="center">
         <Spinner/>
