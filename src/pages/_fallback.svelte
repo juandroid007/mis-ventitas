@@ -17,10 +17,10 @@
 </style>
 
 <div class="e404">
-  <div class="huge">404</div>
+  <div class="huge font-satisfy">404</div>
   <div class="big">
-    Page not found.
+    Página no encontrada,
     <!-- link to the parent folder of _fallback.svelte -->
-    <a href={$url('../')}>Go back</a>
+    <a href={$url('/')} class="underline">ir al inicio</a>
   </div>
 </div>
