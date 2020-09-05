@@ -13,6 +13,7 @@
   "dependencies": {
     "@roxi/routify": "^2.0.2",
     "firebase": "^7.19.1",
+    "nprogress": "^0.2.0",
     "rxfire": "^3.13.5",
     "rxjs": "^6.6.2",
     "svelte": "3.24.1",

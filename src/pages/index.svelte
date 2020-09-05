@@ -1,11 +1,29 @@
 <script lang="ts">
-  const hour = new Date().getHours()
+  import { onMount } from "svelte";
+
+  let time = new Date()
   let greetings: string
 
-  if (hour < 12) { greetings = '🌄 Buenos días' }
-  if (hour == 12) { greetings = '🍛 Buen provecho' }
-  if (hour > 12) { greetings = '🌇 Buenas tardes' }
-  if (hour > 18) { greetings = '🌃 Buenas noches' }
+  $: hours = time.getHours()
+  $: minutes = time.getMinutes()
+  $: seconds = time.getSeconds()
+
+  $: {
+    if (hours < 12) { greetings = '🌄 Buenos días' }
+    if (hours == 12) { greetings = '🍛 Buen provecho' }
+    if (hours > 12) { greetings = '🌇 Buenas tardes' }
+    if (hours > 18) { greetings = '🌃 Buenas noches' }
+  }
+
+  onMount(() => {
+    const interval = setInterval(() => {
+      time = new Date()
+    }, 1000)
+
+    return () => {
+      clearInterval(interval);
+    }
+  })
 </script>
 
-<h1 class="text-4xl font-satisfy">{greetings}, morrocoyita hermosa</h1>
+<h1 class="text-4xl font-satisfy">{greetings}, morrocoyita hermosa, son las {hours}:{minutes}:{seconds}</h1>

@@ -4,4 +4,9 @@ export default [
     href: '/',
     rel: 'prefetch',
   },
+  {
+    titulo: 'Quincenas',
+    href: '/quincenas',
+    rel: 'prefetch',
+  },
 ]

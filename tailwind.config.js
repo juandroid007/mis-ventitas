@@ -61,7 +61,7 @@ module.exports = {
         'full': '10010px',
       },
       fontFamily: {
-        sans: 'Roboto',
+        sans: 'Raleway',
         satisfy: 'Satisfy',
       },
       colors: {

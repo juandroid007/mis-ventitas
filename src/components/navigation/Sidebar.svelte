@@ -1,4 +1,5 @@
 <script>
+  import { url } from '@roxi/routify'
   import { logout } from '../../lib/auth'
   import elements from '../../lib/navigation'
   export let open = true
@@ -29,7 +30,7 @@
       {#if el.separator}
         <span class={separatorClass}></span>
       {/if}
-      <a class="block py-1 duration-200 hover:text-gray-600" rel={el.rel} href={el.href}>{el.titulo}</a>
+      <a class="block py-1 duration-200 hover:text-gray-600" rel={el.rel} href={$url(el.href)}>{el.titulo}</a>
     {/each}
 
     <span class={separatorClass}></span>
