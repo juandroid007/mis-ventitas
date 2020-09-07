@@ -107,17 +107,17 @@
   }
 
   li {
-    @apply py-2;
+    @apply py-4;
     @apply border-b;
   }
 
   li:first-child {
     @apply pt-0;
-    @apply pb-2;
+    @apply pb-4;
   }
 
   li:last-child {
-    @apply pt-2;
+    @apply pt-4;
     @apply pb-0;
     @apply border-0;
   }
