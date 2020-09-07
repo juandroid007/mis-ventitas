@@ -56,7 +56,7 @@
               <li>
                 <div class="flex flex-col -m-4 lg:flex-row">
                   <div class="block m-4">
-                    <div class="p input-label">Id</div>
+                    <div class="p input-label">Id único</div>
                     <p>{q.id}</p>
                   </div>
                   <div class="block m-4">
