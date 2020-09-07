@@ -20,7 +20,7 @@
 <aside
   on:mouseenter={() => inside = true}
   on:mouseleave={() => inside = false}
-  class="absolute h-screen shadow-2xl bg-sky-100"
+  class="absolute h-screen bg-white border-l shadow-2xl"
   class:open
 >
   <nav class="p-12 pt-16 text-xl">

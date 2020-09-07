@@ -1,4 +1,72 @@
 @import "tailwindcss/base.css";
 @import "tailwindcss/components.css";
-
 @import "tailwindcss/utilities.css";
+
+.link {
+	@apply underline;
+	@apply text-sky;
+	@apply duration-200;
+}
+
+.link:hover {
+	@apply text-sky-300;
+}
+
+.btn {
+	@apply py-4;
+	@apply px-6;
+	@apply font-bold;
+	@apply duration-200;
+	@apply rounded-xl;
+}
+
+.btn-sm {
+	@apply py-1;
+	@apply px-2;
+	@apply text-sm;
+	@apply duration-200;
+	@apply rounded-lg;
+}
+
+.btn-pinky {
+	@apply text-white;
+	@apply bg-pinky-500;
+}
+
+.btn-pinky:hover {
+	@apply bg-pinky-300;
+}
+
+.btn-sky {
+	@apply text-white;
+	@apply bg-sky-500;
+}
+
+.btn-sky:hover {
+	@apply bg-sky-300;
+}
+
+.input {
+        @apply bg-white;
+        @apply shadow;
+        @apply appearance-none;
+        @apply border;
+        @apply rounded;
+        @apply w-full;
+        @apply py-2;
+        @apply px-3;
+        @apply text-gray-700;
+        @apply leading-tight;
+}
+
+input:focus {
+        @apply outline-none;
+        @apply shadow-outline;
+}
+
+.input-label {
+        @apply block;
+        @apply text-gray-700;
+        @apply text-sm;
+        @apply mb-2;
+}
