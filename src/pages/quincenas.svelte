@@ -52,9 +52,30 @@
       <div class="flex flex-col" in:fade={{duration: 200}}>
         <div class="quincenas">
           <ul>
-            {#each quincenas as q, idx}
+            {#each quincenas as q}
               <li>
-                <strong>{idx + 1}</strong> - <strong>{q.fechaFmt()}</strong> - {q.nombre} - Creado el <strong>{q.createdFmt()}</strong> - <button class="link" on:click={editorUpdate(q)}>Actualizar</button> - <button class="link" on:click={del(q.id)}>Eliminar</button>
+                <div class="flex flex-col -m-4 lg:flex-row">
+                  <div class="block m-4">
+                    <div class="p input-label">Id</div>
+                    <p>{q.id}</p>
+                  </div>
+                  <div class="block m-4">
+                    <div class="p input-label">Nombre</div>
+                    <p>{q.nombre}</p>
+                  </div>
+                  <div class="block m-4">
+                    <div class="p input-label">Fecha</div>
+                    <p>{q.fechaFmt()}</p>
+                  </div>
+                  <div class="block m-4">
+                    <div class="p input-label">Creada el</div>
+                    <p>{q.createdFmt()}</p>
+                  </div>
+                  <div class="block m-4">
+                    <div class="p input-label">Acciones</div>
+                    <button class="link" on:click={editorUpdate(q)}>Actualizar</button> - <button class="link" on:click={del(q.id)}>Eliminar</button>
+                  </div>
+                </div>
               </li>
             {/each}
           </ul>
@@ -86,17 +107,17 @@
   }
 
   li {
-    @apply py-1;
+    @apply py-2;
     @apply border-b;
   }
 
   li:first-child {
     @apply pt-0;
-    @apply pb-1;
+    @apply pb-2;
   }
 
   li:last-child {
-    @apply pt-1;
+    @apply pt-2;
     @apply pb-0;
     @apply border-0;
   }
