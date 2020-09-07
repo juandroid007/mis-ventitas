@@ -85,6 +85,10 @@
         <h1 class="mb-4 text-2xl">Datos de la última quincena</h1>
         <div class="flex flex-col -m-4 lg:flex-row">
           <div class="block m-4">
+            <div class="p input-label">Id único</div>
+            <p>{quincena.id}</p>
+          </div>
+          <div class="block m-4">
             <div class="p input-label">Nombre</div>
             <p>{quincena.nombre}</p>
           </div>
