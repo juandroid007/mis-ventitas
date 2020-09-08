@@ -70,3 +70,24 @@ input:focus {
         @apply text-sm;
         @apply mb-2;
 }
+
+.details {
+	display: flex;
+	flex-direction: column;
+	@apply -m-2;
+}
+
+.details .detail {
+	@apply m-2;
+}
+
+@screen lg {
+	.details {
+		flex-direction: row;
+		@apply -m-4;
+	}
+
+	.details .detail {
+		@apply m-4;
+	}
+}

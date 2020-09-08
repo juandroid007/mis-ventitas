@@ -81,23 +81,23 @@
     </p>
   {:else}
     <div class="flex" in:fade={{duration: 200}}>
-      <div class="p-6 border shadow-xl lg:m-auto rounded-xl">
-        <h1 class="mb-4 text-2xl">Datos de la última quincena</h1>
-        <div class="flex flex-col -m-4 lg:flex-row">
-          <div class="block m-4">
-            <div class="p input-label">Id único</div>
+      <div class="w-full p-6 border shadow-xl rounded-xl">
+        <h1 class="mb-4 text-2xl">Datos de la última quincenita</h1>
+        <div class="justify-between details">
+          <div class="detail">
+            <p class="input-label">Id único</p>
             <p>{quincena.id}</p>
           </div>
-          <div class="block m-4">
-            <div class="p input-label">Nombre</div>
+          <div class="detail">
+            <p class="input-label">Nombre</p>
             <p>{quincena.nombre}</p>
           </div>
-          <div class="block m-4">
-            <div class="p input-label">Fecha</div>
+          <div class="detail">
+            <p class="input-label">Fecha</p>
             <p>{quincena.fechaFmt()}</p>
           </div>
-          <div class="block m-4">
-            <div class="p input-label">Creada el</div>
+          <div class="detail">
+            <p class="input-label">Creada el</p>
             <p>{quincena.createdFmt()}</p>
           </div>
         </div>

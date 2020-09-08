@@ -9,4 +9,9 @@ export default [
     href: '/quincenas',
     rel: 'prefetch',
   },
+  {
+    titulo: 'Empleadas',
+    href: '/empleadas',
+    rel: 'prefetch',
+  },
 ]

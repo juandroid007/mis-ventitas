@@ -1,10 +1,10 @@
 <script lang="ts">
   import type { Status } from '../components/editores/lib'
   import type { Order } from '../lib/stuff/order'
-  import Editor from '../components/editores/QuincenaEditor.svelte'
+  import Editor from '../components/editores/EmpleadaEditor.svelte'
   import { db } from '../lib/firebase'
   import { collectionData } from 'rxfire/firestore'
-  import { Quincena } from '../lib/models/quincena'
+  import { Empleada } from '../lib/models/empleada'
 
   import { fade } from 'svelte/transition'
 
@@ -12,16 +12,16 @@
   let editor: Status = 'closed'
   $: uid = scoped?.uid
 
-  let selected: Quincena
+  let selected: Empleada
 
-  let quincenas: Quincena[]
+  let empleadas: Empleada[]
   let loaded = false
 
   let order: Order = 'desc'
 
   $: orderTxt = order == 'desc' ? 'nuevos primero' : 'antiguos primero'
 
-  const dbRef = db.collection('quincenas')
+  const dbRef = db.collection('empleadas')
 
   const changeOrder = () => {
     if (order == 'desc') {
@@ -36,16 +36,16 @@
     loaded = true
     console.log(q)
     if (q) {
-      quincenas = q.map(q => Quincena.fromObservable(q))
+      empleadas = q.map(q => Empleada.fromObservable(q))
     }
   })
 
   const editorAdd = () => {
-    selected = new Quincena()
+    selected = new Empleada()
     editor = 'create'
   }
 
-  const editorUpdate = (q: Quincena) => () => {
+  const editorUpdate = (q: Empleada) => () => {
     selected = q
     editor = 'update'
   }
@@ -55,38 +55,30 @@
   }
 </script>
 
-<h1 class="mb-6 text-4xl font-satisfy">Quincenas administradas por la princesa ✨</h1>
+<h1 class="mb-6 text-4xl font-satisfy">Empleadas que trabajan para la princesa ✨</h1>
 
 {#if loaded}
-  <Editor bind:quincena={selected} {uid} bind:editor={editor} />
+  <Editor bind:empleada={selected} {uid} bind:editor={editor} />
 
   {#if editor == 'closed'}
-    {#if quincenas?.length}
+    {#if empleadas?.length}
       <div class="flex flex-col" in:fade={{duration: 200}}>
-        <div class="quincenas">
+        <div class="empleadas">
           <ul>
-            {#each quincenas as q}
+            {#each empleadas as e}
               <li>
                 <div class="justify-between details">
                   <div class="detail">
-                    <div class="input-label">Id único</div>
-                    <p>{q.id}</p>
-                  </div>
-                  <div class="detail">
                     <div class="input-label">Nombre</div>
-                    <p>{q.nombre}</p>
+                    <p>{e.nombre}</p>
                   </div>
                   <div class="detail">
-                    <div class="p input-label">Fecha</div>
-                    <p>{q.fechaFmt()}</p>
-                  </div>
-                  <div class="detail">
-                    <div class="p input-label">Creada el</div>
-                    <p>{q.createdFmt()}</p>
+                    <div class="p input-label">Agregada el</div>
+                    <p>{e.createdFmt()}</p>
                   </div>
                   <div class="detail">
                     <div class="p input-label">Acciones</div>
-                    <button class="link" on:click={editorUpdate(q)}>Actualizar</button> - <button class="link" on:click={del(q.id)}>Eliminar</button>
+                    <button class="link" on:click={editorUpdate(e)}>Actualizar</button> - <button class="link" on:click={del(e.id)}>Eliminar</button>
                   </div>
                 </div>
               </li>
@@ -98,23 +90,23 @@
           <button class="mx-2 btn-sm btn-sky" on:click={changeOrder}>Cambiar orden</button>
         </div>
         <div class="flex lg:ml-auto">
-          <button class="w-full btn btn-pinky" on:click={editorAdd}>Agregar nueva quincena</button>
+          <button class="w-full btn btn-pinky" on:click={editorAdd}>Agregar nueva empleada</button>
         </div>
       </div>
     {:else}
       <p class="text-xl text-gray-500">
-      No hay quincenas aún, debes <button class="link" on:click={editorAdd}>agregar</button> una nueva, mi amor
+      No hay empleadas aún, debes <span class="line-through">esclavizar</span> <button class="link" on:click={editorAdd}>agregar</button> una nueva, mi amor
       </p>
     {/if}
   {/if}
 {:else}
   <p class="text-xl text-gray-500">
-  Cargando quincenas...
+  Cargando empleadas...
   </p>
 {/if}
 
 <style>
-  .quincenas {
+  .empleadas {
     display: flex;
     flex-direction: column;
     width: 100%;
