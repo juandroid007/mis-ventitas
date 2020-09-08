@@ -16,7 +16,7 @@
       action = 'Actualizar'
       break
     case 'create':
-      title = 'Agregar una nueva empleada'
+      title = 'Esclavizar a una nueva empleada'
       action = 'Agregar'
       break
   }
